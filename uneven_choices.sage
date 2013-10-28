@@ -17,7 +17,10 @@ def unbalance_two_even(n):
     show(points(plot))
     
 def unbalance_two_even_two(n):
-    plot = []
+    p = []
     for i in range(1,n):
-        plot.append((i,1/(1==x^(i*2/n)+x^((n-i)*2/n)).find_root(0,1)))
-    show(points(plot))
+        p.append((i,1/(1==x^(i*2/n)+x^((n-i)*2/n)).find_root(0,1)))
+    t = text("0.03(x-5)^2 + 2", (5,3))
+    g = points(p) + plot(0.03*(x-5)^2 + 2, (x, 0, 10)) + t
+    show(g)
+    g.save('power.png')
