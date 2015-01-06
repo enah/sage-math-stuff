@@ -67,3 +67,21 @@ def plot_mut(m):
     g = points(p, rgbcolor=hue(0)) + points(d, rgbcolor=hue(0.8))
     show(g, scale="semilogy")
     #g.save("recurr1.png", scale="semilogy")
+
+@memo
+def golden_ratio(n):
+    if n < 0:
+       return 0
+    if n == 0:
+       return 1
+    return golden_ratio(n-1) + golden_ratio(n-2)
+
+def plot_gr(m):
+    p = []
+    for i in range(0, m):
+    	p.append((i, golden_ratio(i)))
+    g = points(p)
+    show(g, scale="semilogy")
+#    g.save("grlog7.png", scale="semilogy")
+
+# you know, a helper function - a function that returns a function - would be really nice here
